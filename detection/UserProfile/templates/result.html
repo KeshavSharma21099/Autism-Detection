@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        body {
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('{% static "/images/dff.jpg" %}');
+            height: 100vh;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+        }
+        
+        .nav-area {
+            display: flex;
+            background-color: transparent;
+            font-size: 28px;
+            text-decoration: none;
+            list-style: none;
+            height: 45px;
+            margin-top: 9px;
+        }
+        
+        .iyy {
+            text-decoration: none;
+            margin: 20px;
+            padding: 3px;
+            font-size: 24px;
+            color: aqua;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        img {
+            box-sizing: border-box;
+            height: auto;
+            width: 61px;
+            opacity: 0.9;
+            margin-left: 10px;
+        }
+        
+        .nav-area li :hover {
+            background-color: black;
+        }
+        
+        .res {
+            text-align: center;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-top: 250px;
+            font-size: 43px;
+            font-family: 'Raleway', sans-serif;
+            font-family: Helvetica, sans-serif;
+        }
+        
+        .log {
+            margin-left: 620px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            color: aqua;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        
+        .re {
+            color: green;
+            color: green;
+            margin-left: 570px;
+            margin-right: 570px;
+            background-color: floralwhite;
+            border-radius: 27px;
+        }
+        
+        .re2 {
+            color: red;
+            background: burlywood;
+            margin-left: 570px;
+            margin-right: 570px;
+            text-align: center;
+        }
+        
+        .re3 {
+            color: yellow;
+            margin-left: 470px;
+            margin-right: 470px;
+            background-color: cadetblue;
+            border-radius: 27px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav-area">
+        <img src="{% static '/images/child-safe-zone.png' %}">
+        <li><a class="iyy" href="#">Home</a></li>
+        <li><a class="iyy" href="#">Profile</a></li>
+        <li><a class="iyy" href="#">About</a></li>
+
+
+
+
+        <li><a class="iyy" href="#">Contact Us</a></li>
+        <li><a class=" log" href="#">Log Out</a></li>
+
+    </ul>
+
+    <div class="res">
+        {% if result == 2 %}
+            <h2 class="re">
+                Negative
+            </h2>
+        {% endif %}
+        {% if result == 1 %}
+            <h2 class="re">
+                Positive
+            </h2>
+        {% endif %}
+        {% if result == 0 %}
+            <h2 class="re">
+                Cannot Determine
+            </h2>
+        {% endif %}
+    </div>
+</body>
+
+</html>
